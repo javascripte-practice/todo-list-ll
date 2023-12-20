@@ -1,0 +1,15 @@
+.card {
+  padding: 10px 20px;
+  background-color: brown;
+  max-width: 500px;
+  margin: 30px auto;
+  border-radius: 8px;
+  color: #fff;
+}
+
+.blue {
+  background-color: rgba(0, 0, 255, 0.625);
+}
+.green {
+  background-color: rgba(0, 128, 0, 0.616);
+}
