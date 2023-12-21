@@ -1,0 +1,29 @@
+.inputs {
+  padding: 5px 10px;
+  width: 300px;
+  font-size: 17px;
+  outline: 1px solid transparent;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn {
+  font-size: 16px;
+  padding: 6px 10px;
+  outline: 1px solid transparent;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(0, 0, 255, 0.848);
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: rgba(0, 0, 255, 0.571);
+}
+
+.form {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px 0 0;
+}
