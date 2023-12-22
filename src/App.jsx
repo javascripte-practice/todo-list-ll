@@ -3,18 +3,18 @@ import Card from "./components/helper/Card/Card";
 import AddTodo from "./components/UI/AddTodo/AddTodo";
 import TodoList from "./components/UI/TodoList/TodoList";
 function App() {
-  const [todos, setTodos] = useState([]);
-  const deleteHandler = (t) => {
-    setTodos((prevArr) => prevArr.filter((k) => t?.id !== k?.id));
+  const [users, setUsers] = useState([]);
+  const deleteHandler = (u) => {
+    setUsers((prevArr) => prevArr.filter((k) => u?.id !== k?.id));
   };
 
   return (
     <>
       <Card>
-        <h1>Todo List</h1>
+        <h1>Users List</h1>
       </Card>
-      <AddTodo setTodos={setTodos} />
-      <TodoList deleteHandler={deleteHandler} todos={todos} />
+      <AddTodo setUsers={setUsers} />
+      <TodoList deleteHandler={deleteHandler} users={users} />
     </>
   );
 }
