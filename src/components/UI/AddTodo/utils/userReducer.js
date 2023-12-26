@@ -1,4 +1,4 @@
-import { FIRST_NAME, LAST_NAME, AGE, RESET_USER } from "./contants";
+import { FIRST_NAME, LAST_NAME, AGE, RESET_USER } from "./constants";
 import { initialUser } from "./initialData";
 
 export const userReducer = (state, action) => {

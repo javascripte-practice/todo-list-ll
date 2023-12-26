@@ -3,7 +3,7 @@ import Card from "../../helper/Card/Card";
 import styles from "./AddTodo.module.css";
 import { userReducer } from "./utils/userReducer";
 import { initialUser } from "./utils/initialData";
-import { FIRST_NAME, LAST_NAME, AGE, RESET_USER } from "./utils/contants";
+import { FIRST_NAME, LAST_NAME, AGE, RESET_USER } from "./utils/constants";
 
 const AddTodo = ({ setUsers }) => {
   const [user, dispatchUser] = useReducer(userReducer, initialUser);

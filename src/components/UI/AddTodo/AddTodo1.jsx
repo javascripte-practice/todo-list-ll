@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import Card from "../../helper/Card/Card";
 import styles from "./AddTodo.module.css";
-
+/*
 const AddTodo = ({ setUsers }) => {
   const [changeFName, setChangeFName] = useState("");
+  let nameInput = "";
   const [changeLName, setChangeLName] = useState("");
   const [changeAge, setChangeAge] = useState("");
   const [errFName, setErrFName] = useState(false);
@@ -126,6 +127,32 @@ const AddTodo = ({ setUsers }) => {
         </button>
       </form>
     </Card>
+  );
+};
+
+export default AddTodo;
+ */
+
+const customState = function (initialValue) {
+  let state = initialValue;
+  const setState = function (changedValue) {
+    if (typeof changedValue === "function") {
+      const newState = changedValue(state);
+      state = newState;
+    } else {
+      state = changedValue;
+    }
+    this();
+  };
+  setState.bind(this);
+  return [state, setState];
+};
+const AddTodo = () => {
+  const [state, setState] = customState.call(AddTodo, "Hello");
+  return (
+    <>
+      <h1>{state}</h1> <button onClick={() => setState("Good bye")}>btn</button>
+    </>
   );
 };
 
