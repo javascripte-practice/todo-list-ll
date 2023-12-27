@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import styles from "./Navbar.module.css";
 import AppContext from "../../../../context/appContext";
-const Navbar = ({ logOut }) => {
+const Navbar = () => {
   /*
   return (
     <AppContext.Consumer>
@@ -35,7 +35,7 @@ const Navbar = ({ logOut }) => {
       {ctx.isVerify && <li>Contacts</li>}
       {ctx.isVerify && (
         <li>
-          <button className={styles["btn"]} onClick={logOut}>
+          <button className={styles["btn"]} onClick={ctx.onLogout}>
             Log Out
           </button>
         </li>

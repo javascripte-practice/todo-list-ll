@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Layout from "./components/helper/Layout/Layout";
 import Card from "./components/helper/Card/Card";
 import AddTodo from "./components/UI/AddTodo/AddTodo";
@@ -16,36 +16,23 @@ import AppContext from "./context/appContext";
 
 function App() {
   const [users, setUsers] = useState([]);
-  const [isVerify, setIsVerify] = useState(false);
-  const [username, setUsername] = useState("");
-  const logOut = () => {
-    setIsVerify(false);
-  };
-  const loginData = ({ username, password }) => {
-    if (!username.trim() || !password.trim()) {
-      setIsVerify(false);
-      setUsername("");
-      return;
-    } else {
-      setIsVerify(true);
-      setUsername(username);
-    }
-  };
+  const ctx = useContext(AppContext);
+
   return (
-    <AppContext.Provider value={{ username, isVerify }}>
-      <Layout logOut={logOut}>
+    <>
+      <Layout>
         <Card>
           <h1>Users List</h1>
         </Card>
-        {!isVerify && <Login loginData={loginData} />}
-        {isVerify && (
+        {!ctx.isVerify && <Login />}
+        {ctx.isVerify && (
           <>
             <AddTodo setUsers={setUsers} />
             <TodoList users={users} setUsers={setUsers} />
           </>
         )}
       </Layout>
-    </AppContext.Provider>
+    </>
   );
 }
 export default App;

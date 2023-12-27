@@ -1,10 +1,12 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import Card from "../../helper/Card/Card";
 import styles from "./Login.module.css";
+import AppContext from "../../../context/appContext";
 
-const Login = ({ loginData }) => {
+const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const ctx = useContext(AppContext);
 
   const changeUsername = (e) => {
     setUsername(e.target?.value);
@@ -12,14 +14,13 @@ const Login = ({ loginData }) => {
   const changePassword = (e) => {
     setPassword(e.target.value);
   };
-
   const submitHandler = (e) => {
     e.preventDefault();
     const obj = {
       username,
       password,
     };
-    loginData(obj);
+    ctx.onLogin(obj);
   };
   return (
     <Card>
